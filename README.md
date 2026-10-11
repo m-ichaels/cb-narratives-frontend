@@ -1,8 +1,8 @@
 # cb-narratives-frontend
 
-Does splitting an FOMC statement's hawkishness by topic add anything to its overall tone, for the 2-year Treasury yield?
+Does an FOMC statement's hawkishness move the 2-year Treasury yield, and does splitting it by topic add anything?
 
-Not detectably. The change in a statement's overall hawkishness moves with the 2-year yield in the 30 minutes around its release (correlation 0.57 on the 21 statements of 2024-26, 0.29 across all 94 since 2015), but a model allowed to use ten topic scores chose not to, and adds nothing out of sample. The likely reason is that a statement gives most topics a single sentence; longer texts such as speeches may suit a split better.
+The overall tone does: its change moves with the 2-year yield in the 30 minutes around the release (correlation 0.57 on the 21 statements of 2024-26, 0.29 across all 94 since 2015). Splitting it by topic adds nothing detectable: a model allowed to use ten topic scores chose not to. The likely reason is that a statement gives most topics a single sentence; longer texts such as speeches may suit a split better.
 
 ## Background
 
