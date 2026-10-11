@@ -1,0 +1,942 @@
+{
+ "n_statements": 94,
+ "n_train": 73,
+ "n_test": 21,
+ "train_end": "2023-12-31",
+ "test_dates": [
+  "2024-01-31",
+  "2024-03-20",
+  "2024-05-01",
+  "2024-06-12",
+  "2024-07-31",
+  "2024-09-18",
+  "2024-11-07",
+  "2024-12-18",
+  "2025-01-29",
+  "2025-03-19",
+  "2025-05-07",
+  "2025-06-18",
+  "2025-07-30",
+  "2025-09-17",
+  "2025-10-29",
+  "2025-12-10",
+  "2026-01-28",
+  "2026-03-18",
+  "2026-04-29",
+  "2026-06-17",
+  "2026-07-29"
+ ],
+ "aggregate": {
+  "rcn_pooled_test": {
+   "corr": 0.3436594005578529,
+   "ci": [
+    0.08569265605470942,
+    0.5444401945379639
+   ],
+   "n": 44,
+   "perm_p": 0.0216,
+   "r2_oos": 0.09089587371023522,
+   "source": "rates-curve-nlp/results/nlp_signal.json: feature_sets.roberta_doc_only.r2"
+  },
+  "rcn_fomc_test": {
+   "corr": 0.516441730216995,
+   "n": 22,
+   "ci": [
+    0.17289601990926728,
+    0.7839127871524917
+   ],
+   "source": "rates-curve-nlp/data/derived/nlp_features.csv, bank == FOMC, date > 2023-12-31 (includes the 2025-08-22 framework note, src = daily)"
+  },
+  "rcn_ecb_test": {
+   "corr": 0.1610008490647427,
+   "n": 22,
+   "ci": [
+    -0.26847505243472186,
+    0.49276189292068184
+   ],
+   "source": "same file, bank == ECB (daily CMT 2y changes, not event windows)"
+  },
+  "policy_test": {
+   "corr": 0.572908679715713,
+   "n": 21,
+   "ci": [
+    0.2067399753745086,
+    0.8368227424234944
+   ],
+   "perm_p": 0.0066,
+   "note": "95 policy statements, dh vs the previous policy statement, USMPD statement window"
+  },
+  "policy_train": {
+   "corr": 0.1944591584137865,
+   "n": 73,
+   "ci": [
+    -0.09103493600226821,
+    0.4439659749887689
+   ],
+   "perm_p": 0.0974
+  },
+  "policy_all": {
+   "corr": 0.28504402667439516,
+   "n": 94,
+   "ci": [
+    0.0625203490462885,
+    0.47596436096185685
+   ],
+   "perm_p": 0.0056
+  },
+  "other_tenors_policy_test": {
+   "r5": 0.5527712591121338,
+   "r10": 0.5297194710204689,
+   "r30": 0.35221997221706625
+  },
+  "crosscheck_rcn_rob_h_max_abs_diff": 8.895698960786902e-07,
+  "crosscheck_rcn_rob_dh_max_abs_diff_excl_successors_of_non_policy_files": 1.049903591010537e-06,
+  "successors_of_non_policy_files": [
+   "2019-10-30",
+   "2020-04-29",
+   "2020-09-16",
+   "2025-09-17"
+  ]
+ },
+ "per_topic": {
+  "inflation": {
+   "n_present_both_test": 18,
+   "n_present_both_all": 74,
+   "median_n_sentences": 1.0,
+   "share_mean": 0.06384756727254828,
+   "dc_corr_test": -0.014635680690438855,
+   "dc_corr_test_ci": [
+    -0.2890308175388858,
+    0.3094852190391962
+   ],
+   "dc_corr_all": -0.011553938805315491,
+   "dc_corr_all_ci": [
+    -0.18975498273637567,
+    0.15507097281757934
+   ],
+   "dc_partial_corr_given_dh_test": -0.2936669465163863,
+   "dc_partial_corr_given_dh_all": -0.039023952302209786,
+   "dh_topic_corr_test": 0.12411978933956451,
+   "dh_topic_corr_all": 0.10027281936355259,
+   "dh_topic_corr_all_ci": [
+    -0.05492300627667009,
+    0.26472069377429325
+   ],
+   "dh_topic_partial_given_dh_all": 0.06165677049777809
+  },
+  "labour": {
+   "n_present_both_test": 21,
+   "n_present_both_all": 80,
+   "median_n_sentences": 1.0,
+   "share_mean": 0.063025399398893,
+   "dc_corr_test": 0.07720909504948291,
+   "dc_corr_test_ci": [
+    -0.28937948433270877,
+    0.3655413905065173
+   ],
+   "dc_corr_all": 0.14786901733511215,
+   "dc_corr_all_ci": [
+    -0.0528588215338096,
+    0.34131466275684796
+   ],
+   "dc_partial_corr_given_dh_test": -0.14308721379397993,
+   "dc_partial_corr_given_dh_all": 0.02609894516675021,
+   "dh_topic_corr_test": 0.05534301058864932,
+   "dh_topic_corr_all": 0.009520049712223701,
+   "dh_topic_corr_all_ci": [
+    -0.1393448527631835,
+    0.1518822880251574
+   ],
+   "dh_topic_partial_given_dh_all": -0.08902804403592515
+  },
+  "activity": {
+   "n_present_both_test": 17,
+   "n_present_both_all": 72,
+   "median_n_sentences": 1.0,
+   "share_mean": 0.047880599696817745,
+   "dc_corr_test": 0.3192963602011318,
+   "dc_corr_test_ci": [
+    0.09909664910077136,
+    0.6381263641354166
+   ],
+   "dc_corr_all": 0.056164394714592177,
+   "dc_corr_all_ci": [
+    -0.16013133577620087,
+    0.2541485159129883
+   ],
+   "dc_partial_corr_given_dh_test": 0.2703508365828405,
+   "dc_partial_corr_given_dh_all": -0.0038430667207548096,
+   "dh_topic_corr_test": 0.01814088591805886,
+   "dh_topic_corr_all": 0.0006993287223405142,
+   "dh_topic_corr_all_ci": [
+    -0.2101698340350083,
+    0.2308557127615117
+   ],
+   "dh_topic_partial_given_dh_all": -0.041493547110419186
+  },
+  "financial": {
+   "n_present_both_test": 0,
+   "n_present_both_all": 22,
+   "median_n_sentences": 0.0,
+   "share_mean": 0.014740393092795831,
+   "dc_corr_test": 0.10719966789072453,
+   "dc_corr_test_ci": [
+    0.012224492099137514,
+    0.34099494181924855
+   ],
+   "dc_corr_all": 0.04615784457720105,
+   "dc_corr_all_ci": [
+    -0.2130250035568229,
+    0.3066084791886454
+   ],
+   "dc_partial_corr_given_dh_test": 0.05862709837005794,
+   "dc_partial_corr_given_dh_all": -0.027581414172828816,
+   "dh_topic_corr_test": NaN,
+   "dh_topic_corr_all": 0.04185488525977592,
+   "dh_topic_corr_all_ci": [
+    -0.1218739281761001,
+    0.27410149702668757
+   ],
+   "dh_topic_partial_given_dh_all": 0.018008969058048937
+  },
+  "balance_sheet": {
+   "n_present_both_test": 17,
+   "n_present_both_all": 70,
+   "median_n_sentences": 1.0,
+   "share_mean": 0.061606911597999116,
+   "dc_corr_test": -0.09102055305521381,
+   "dc_corr_test_ci": [
+    -0.52636095974085,
+    0.2829508406748206
+   ],
+   "dc_corr_all": 0.0005901241055602663,
+   "dc_corr_all_ci": [
+    -0.1587242103256424,
+    0.08994107713892581
+   ],
+   "dc_partial_corr_given_dh_test": -0.32714046057208274,
+   "dc_partial_corr_given_dh_all": -0.04283717133498473,
+   "dh_topic_corr_test": -0.26598605872445874,
+   "dh_topic_corr_all": -0.16725681719084728,
+   "dh_topic_corr_all_ci": [
+    -0.40158351129516134,
+    0.025881533190128245
+   ],
+   "dh_topic_partial_given_dh_all": -0.1760718708235988
+  },
+  "policy_path": {
+   "n_present_both_test": 19,
+   "n_present_both_all": 92,
+   "median_n_sentences": 3.0,
+   "share_mean": 0.1443771547663939,
+   "dc_corr_test": 0.4462141747613905,
+   "dc_corr_test_ci": [
+    0.00540892346681647,
+    0.7590457123061053
+   ],
+   "dc_corr_all": 0.11546156470589934,
+   "dc_corr_all_ci": [
+    -0.12611623531395577,
+    0.33838782841270165
+   ],
+   "dc_partial_corr_given_dh_test": 0.20498255914018346,
+   "dc_partial_corr_given_dh_all": -0.030218313117518544,
+   "dh_topic_corr_test": 0.5083179309411304,
+   "dh_topic_corr_all": 0.12215256752900916,
+   "dh_topic_corr_all_ci": [
+    -0.1660997972792141,
+    0.38822809020123134
+   ],
+   "dh_topic_partial_given_dh_all": 0.0029622190308228697
+  },
+  "external": {
+   "n_present_both_test": 6,
+   "n_present_both_all": 54,
+   "median_n_sentences": 1.0,
+   "share_mean": 0.07903132205285925,
+   "dc_corr_test": 0.4079002660131203,
+   "dc_corr_test_ci": [
+    -0.11297322807660407,
+    0.7437343877270217
+   ],
+   "dc_corr_all": 0.12182544534442537,
+   "dc_corr_all_ci": [
+    -0.07989331375411557,
+    0.31335871140337795
+   ],
+   "dc_partial_corr_given_dh_test": 0.09333120019095646,
+   "dc_partial_corr_given_dh_all": -0.003178448213709433,
+   "dh_topic_corr_test": 0.10669014634725875,
+   "dh_topic_corr_all": -0.005669497409466002,
+   "dh_topic_corr_all_ci": [
+    -0.2594249878190783,
+    0.28213483855757443
+   ],
+   "dh_topic_partial_given_dh_all": -0.10942301367407586
+  },
+  "mandate": {
+   "n_present_both_test": 21,
+   "n_present_both_all": 92,
+   "median_n_sentences": 5.0,
+   "share_mean": 0.24084512621836474,
+   "dc_corr_test": 0.5213093772982895,
+   "dc_corr_test_ci": [
+    0.11777501703477886,
+    0.8267700135684256
+   ],
+   "dc_corr_all": 0.23160362959434447,
+   "dc_corr_all_ci": [
+    0.060907772509447074,
+    0.3935657918806271
+   ],
+   "dc_partial_corr_given_dh_test": 0.11176756695874639,
+   "dc_partial_corr_given_dh_all": 0.13167840287818786,
+   "dh_topic_corr_test": 0.5369623698970039,
+   "dh_topic_corr_all": 0.2151578635900822,
+   "dh_topic_corr_all_ci": [
+    0.007834360551285571,
+    0.4040020004595647
+   ],
+   "dh_topic_partial_given_dh_all": 0.13071165326274148
+  },
+  "voting": {
+   "n_present_both_test": 19,
+   "n_present_both_all": 92,
+   "median_n_sentences": 5.0,
+   "share_mean": 0.21736488452921912,
+   "dc_corr_test": 0.24205644200406304,
+   "dc_corr_test_ci": [
+    -0.28413339030347884,
+    0.7344932247743982
+   ],
+   "dc_corr_all": 0.116878400027071,
+   "dc_corr_all_ci": [
+    -0.10519818115043114,
+    0.33264856689351135
+   ],
+   "dc_partial_corr_given_dh_test": -0.00523219831679735,
+   "dc_partial_corr_given_dh_all": -0.008575085039167273,
+   "dh_topic_corr_test": 0.40372215993620947,
+   "dh_topic_corr_all": 0.07829883875393862,
+   "dh_topic_corr_all_ci": [
+    -0.14193148979157424,
+    0.30686730522904015
+   ],
+   "dh_topic_partial_given_dh_all": -0.03231774747143371
+  },
+  "other": {
+   "n_present_both_test": 21,
+   "n_present_both_all": 86,
+   "median_n_sentences": 1.0,
+   "share_mean": 0.06728064137410862,
+   "dc_corr_test": -0.444692293581761,
+   "dc_corr_test_ci": [
+    -0.7292133313320924,
+    0.08461920451629239
+   ],
+   "dc_corr_all": -0.03624843124639197,
+   "dc_corr_all_ci": [
+    -0.2524206643073984,
+    0.01256841359004727
+   ],
+   "dc_partial_corr_given_dh_test": -0.4048537497020467,
+   "dc_partial_corr_given_dh_all": 0.002346610888691356,
+   "dh_topic_corr_test": -0.31966446448388625,
+   "dh_topic_corr_all": -0.03773579041565751,
+   "dh_topic_corr_all_ci": [
+    -0.25808573414326225,
+    0.018066828430744076
+   ],
+   "dh_topic_partial_given_dh_all": 0.007072988584196645
+  }
+ },
+ "incremental_dc": {
+  "A": {
+   "lambda": "inf",
+   "loo_r2_train": -0.027300350164358944,
+   "loo_corr_train": 0.016702888918538567,
+   "oos_corr": 0.5729086797157129,
+   "oos_r2": 0.26014669609533236
+  },
+  "B": {
+   "lambda": "inf",
+   "loo_r2_train": -0.027300350164358944,
+   "loo_corr_train": 0.016702888918538567,
+   "oos_corr": 0.5729086797157129,
+   "oos_r2": 0.26014669609533236,
+   "g_std_units": {
+    "inflation": 0.0,
+    "labour": 0.0,
+    "activity": 0.0,
+    "financial": 0.0,
+    "balance_sheet": 0.0,
+    "policy_path": 0.0,
+    "external": 0.0,
+    "mandate": 0.0,
+    "voting": 0.0,
+    "other": 0.0
+   }
+  },
+  "delta_oos_r2": 0.0,
+  "delta_oos_corr": 0.0,
+  "delta_loo_r2_train": 0.0,
+  "perm_p_delta_oos_r2": 0.715,
+  "perm_p_delta_oos_corr": 0.681,
+  "perm_null_delta_oos_r2_p95": 0.02365901289844184,
+  "n_perm": 2000,
+  "note": "B nests A: lambda = inf gives A; the topic block is row-shuffled within train and within test for the null"
+ },
+ "incremental_dh_topic": {
+  "A": {
+   "lambda": "inf",
+   "loo_r2_train": -0.027300350164358944,
+   "loo_corr_train": 0.016702888918538567,
+   "oos_corr": 0.5729086797157129,
+   "oos_r2": 0.26014669609533236
+  },
+  "B": {
+   "lambda": "inf",
+   "loo_r2_train": -0.027300350164358944,
+   "loo_corr_train": 0.016702888918538567,
+   "oos_corr": 0.5729086797157129,
+   "oos_r2": 0.26014669609533236
+  },
+  "delta_oos_r2": 0.0,
+  "delta_oos_corr": 0.0,
+  "delta_loo_r2_train": 0.0,
+  "note": "topic block = dh_k with NaN -> 0 and an undefined indicator per intermittent topic"
+ },
+ "incremental_dshare": {
+  "A": {
+   "lambda": "inf",
+   "loo_r2_train": -0.027300350164358944,
+   "loo_corr_train": 0.016702888918538567,
+   "oos_corr": 0.5729086797157129,
+   "oos_r2": 0.26014669609533236
+  },
+  "B": {
+   "lambda": 30,
+   "loo_r2_train": 0.02411034081458785,
+   "loo_corr_train": 0.19262209978935863,
+   "oos_corr": 0.25562280167241513,
+   "oos_r2": 0.05764112140723687
+  },
+  "delta_oos_r2": -0.2025055746880955,
+  "delta_oos_corr": -0.3172858780432978,
+  "delta_loo_r2_train": 0.051410690978946794,
+  "note": "topic block = dshare_k (prevalence change)"
+ },
+ "incremental_dc_loo_all": {
+  "A_corr": 0.2108110509290249,
+  "B_corr": 0.2108110509290249,
+  "A_r2": 0.04013546807730084,
+  "B_r2": 0.04013546807730084,
+  "n": 94
+ },
+ "stability": {
+  "drop_one_topic": {
+   "inflation": {
+    "corr_test": 0.5992198420991433,
+    "corr_all": 0.2807392735712786,
+    "n_test": 21
+   },
+   "labour": {
+    "corr_test": 0.5909819284421012,
+    "corr_all": 0.25279528023128844,
+    "n_test": 21
+   },
+   "activity": {
+    "corr_test": 0.5178995433408713,
+    "corr_all": 0.27763886258534504,
+    "n_test": 21
+   },
+   "financial": {
+    "corr_test": 0.5671518845915378,
+    "corr_all": 0.27857350380524726,
+    "n_test": 21
+   },
+   "balance_sheet": {
+    "corr_test": 0.6283160320698298,
+    "corr_all": 0.27234666798086793,
+    "n_test": 21
+   },
+   "policy_path": {
+    "corr_test": 0.5023313153563149,
+    "corr_all": 0.24932655653968183,
+    "n_test": 21
+   },
+   "external": {
+    "corr_test": 0.5209708333596809,
+    "corr_all": 0.24985713675501725,
+    "n_test": 21
+   },
+   "mandate": {
+    "corr_test": 0.5278557974404365,
+    "corr_all": 0.2223662909321721,
+    "n_test": 21
+   },
+   "voting": {
+    "corr_test": 0.500803326056255,
+    "corr_all": 0.30260160341663384,
+    "n_test": 21
+   },
+   "other": {
+    "corr_test": 0.575728380829451,
+    "corr_all": 0.29294998924132176,
+    "n_test": 21
+   }
+  },
+  "only_one_topic": {
+   "inflation": {
+    "corr_test": 0.12411978933956451,
+    "corr_all": 0.10027281936355256,
+    "n_test": 18,
+    "n_all": 74
+   },
+   "labour": {
+    "corr_test": 0.05534301058864931,
+    "corr_all": 0.009520049712223706,
+    "n_test": 21,
+    "n_all": 80
+   },
+   "activity": {
+    "corr_test": 0.018140885918058815,
+    "corr_all": 0.0006993287223405119,
+    "n_test": 17,
+    "n_all": 72
+   },
+   "financial": {
+    "corr_test": NaN,
+    "corr_all": 0.04185488525977593,
+    "n_test": 0,
+    "n_all": 22
+   },
+   "balance_sheet": {
+    "corr_test": -0.2659860587244587,
+    "corr_all": -0.16725681719084723,
+    "n_test": 17,
+    "n_all": 70
+   },
+   "policy_path": {
+    "corr_test": 0.5083179309411304,
+    "corr_all": 0.12215256752900916,
+    "n_test": 19,
+    "n_all": 92
+   },
+   "external": {
+    "corr_test": 0.10669014634725867,
+    "corr_all": -0.005669497409466031,
+    "n_test": 6,
+    "n_all": 54
+   },
+   "mandate": {
+    "corr_test": 0.5369623698970037,
+    "corr_all": 0.21515786359008213,
+    "n_test": 21,
+    "n_all": 92
+   },
+   "voting": {
+    "corr_test": 0.40372215993620947,
+    "corr_all": 0.07829883875393866,
+    "n_test": 19,
+    "n_all": 92
+   },
+   "other": {
+    "corr_test": -0.3196644644837738,
+    "corr_all": -0.03773579041565736,
+    "n_test": 21,
+    "n_all": 86
+   }
+  },
+  "substantive_only": {
+   "corr_test": 0.38290113483292826,
+   "corr_all": 0.23009197246354626,
+   "note": "aggregate over the seven substantive topics only"
+  },
+  "jackknife_test": [
+   {
+    "dropped": "2026-06-17",
+    "corr_test": 0.45391096885872173,
+    "dh": 0.2759670269253316,
+    "r2_bp": 7.10000000000006
+   },
+   {
+    "dropped": "2024-09-18",
+    "corr_test": 0.5058315446798844,
+    "dh": -0.1548293057193361,
+    "r2_bp": -8.58000000000003
+   },
+   {
+    "dropped": "2025-09-17",
+    "corr_test": 0.5302170240618076,
+    "dh": -0.1538385409191029,
+    "r2_bp": -5.55000000000003
+   },
+   {
+    "dropped": "2025-03-19",
+    "corr_test": 0.5473592821687574,
+    "dh": -0.1032677438056525,
+    "r2_bp": -5.10000000000001
+   },
+   {
+    "dropped": "2025-01-29",
+    "corr_test": 0.5507522361364011,
+    "dh": 0.1687402892801603,
+    "r2_bp": 2.89999999999999
+   },
+   {
+    "dropped": "2024-01-31",
+    "corr_test": 0.5681113850709811,
+    "dh": 0.0619421664673391,
+    "r2_bp": 1.44000000000001
+   },
+   {
+    "dropped": "2024-06-12",
+    "corr_test": 0.5688700314858355,
+    "dh": 0.1774251157515126,
+    "r2_bp": 1.68000000000008
+   },
+   {
+    "dropped": "2026-04-29",
+    "corr_test": 0.569530723139085,
+    "dh": 0.0478268224157675,
+    "r2_bp": 2.09999999999999
+   },
+   {
+    "dropped": "2026-03-18",
+    "corr_test": 0.5728916212162752,
+    "dh": 0.0046463999906176,
+    "r2_bp": -0.8999999999999799
+   },
+   {
+    "dropped": "2024-03-20",
+    "corr_test": 0.575619729590472,
+    "dh": 0.0001665464675936,
+    "r2_bp": -2.7699999999999303
+   },
+   {
+    "dropped": "2026-01-28",
+    "corr_test": 0.5767091866506582,
+    "dh": 0.1026716836401503,
+    "r2_bp": 0.15
+   },
+   {
+    "dropped": "2025-10-29",
+    "corr_test": 0.5769430671483304,
+    "dh": -0.0097007599819335,
+    "r2_bp": 0.70000000000001
+   },
+   {
+    "dropped": "2025-06-18",
+    "corr_test": 0.5799159081325743,
+    "dh": 0.0243685289034248,
+    "r2_bp": -2.4
+   },
+   {
+    "dropped": "2024-11-07",
+    "corr_test": 0.5812548246626887,
+    "dh": -0.0168109960428814,
+    "r2_bp": 1.25000000000001
+   },
+   {
+    "dropped": "2026-07-29",
+    "corr_test": 0.5846744188281123,
+    "dh": 0.0008789467827025,
+    "r2_bp": -4.49999999999999
+   },
+   {
+    "dropped": "2025-12-10",
+    "corr_test": 0.5865800043685778,
+    "dh": 0.0538386503358196,
+    "r2_bp": -2.20000000000002
+   },
+   {
+    "dropped": "2024-05-01",
+    "corr_test": 0.5871682076124908,
+    "dh": -0.1322694819150565,
+    "r2_bp": -1.04000000000006
+   },
+   {
+    "dropped": "2025-07-30",
+    "corr_test": 0.5973062419482408,
+    "dh": -0.1612217888069276,
+    "r2_bp": -1.00000000000002
+   },
+   {
+    "dropped": "2024-07-31",
+    "corr_test": 0.6022762051718843,
+    "dh": -0.0887066300939339,
+    "r2_bp": 1.02999999999999
+   },
+   {
+    "dropped": "2025-05-07",
+    "corr_test": 0.6124330434614488,
+    "dh": 0.0930068995442395,
+    "r2_bp": -3.10000000000001
+   },
+   {
+    "dropped": "2024-12-18",
+    "corr_test": 0.6920939883855387,
+    "dh": -0.0009206181231598,
+    "r2_bp": 9.08000000000006
+   }
+  ]
+ },
+ "what_broke": {
+  "undefined_topic_dh": {
+   "pairs_total": 940,
+   "pairs_undefined": 206,
+   "by_topic": {
+    "inflation": {
+     "both": 74,
+     "absent": 13,
+     "vanished": 4,
+     "appeared": 3
+    },
+    "labour": {
+     "both": 80,
+     "absent": 8,
+     "vanished": 3,
+     "appeared": 3
+    },
+    "activity": {
+     "both": 72,
+     "absent": 12,
+     "vanished": 5,
+     "appeared": 5
+    },
+    "financial": {
+     "absent": 66,
+     "both": 22,
+     "appeared": 3,
+     "vanished": 3
+    },
+    "balance_sheet": {
+     "both": 70,
+     "absent": 18,
+     "vanished": 3,
+     "appeared": 3
+    },
+    "policy_path": {
+     "both": 92,
+     "vanished": 1,
+     "absent": 1
+    },
+    "external": {
+     "both": 54,
+     "absent": 26,
+     "vanished": 7,
+     "appeared": 7
+    },
+    "mandate": {
+     "both": 92,
+     "vanished": 1,
+     "appeared": 1
+    },
+    "voting": {
+     "both": 92,
+     "vanished": 1,
+     "appeared": 1
+    },
+    "other": {
+     "both": 86,
+     "absent": 7,
+     "appeared": 1
+    }
+   }
+  },
+  "median_sentences_per_topic": {
+   "inflation": 1.0,
+   "labour": 1.0,
+   "activity": 1.0,
+   "financial": 0.0,
+   "balance_sheet": 1.0,
+   "policy_path": 3.0,
+   "external": 1.0,
+   "mandate": 5.0,
+   "voting": 5.0,
+   "other": 1.0
+  },
+  "mix_vs_tone": {
+   "var_share_mix": 0.19961042676063195,
+   "var_share_tone": 0.8348263238063441,
+   "corr_mix_tone": -0.04217960324174608,
+   "corr_mix_r2_test": 0.386533651437411,
+   "corr_tone_r2_test": 0.5537336320588498,
+   "corr_mix_r2_all": 0.22930432869710674,
+   "corr_tone_r2_all": 0.19984488736827197,
+   "corr_dh_dn_sent_all": -0.0323349445329761
+  },
+  "vote_fragments": {
+   "share_of_sentences": 0.21588089330024815,
+   "mean_score": -0.004955211601717833,
+   "std_score": 0.22422376927613757,
+   "corr_test_without_voting": 0.500803326056255,
+   "example": "Voting for the FOMC monetary policy action were: Janet L."
+  },
+  "format_break_2026": {
+   "rows": [
+    {
+     "date": "2026-04-29",
+     "n_sent": 21,
+     "h": 0.0753464004232054,
+     "dh": 0.0478268224157675,
+     "usmpd_r2": 2.09999999999999
+    },
+    {
+     "date": "2026-06-17",
+     "n_sent": 9,
+     "h": 0.3513134273485371,
+     "dh": 0.2759670269253316,
+     "usmpd_r2": 7.10000000000006
+    },
+    {
+     "date": "2026-07-29",
+     "n_sent": 12,
+     "h": 0.3521923741312396,
+     "dh": 0.0008789467827025,
+     "usmpd_r2": -4.49999999999999
+    }
+   ],
+   "jackknife_corr_without_2026-06-17": 0.45391096885872173
+  },
+  "narratives_in_statements": {
+   "tariff": {
+    "n_sentences": 0,
+    "n_statements": 0
+   },
+   "AI": {
+    "n_sentences": 0,
+    "n_statements": 0
+   },
+   "Middle East / Hormuz": {
+    "n_sentences": 9,
+    "n_statements": 7
+   },
+   "energy": {
+    "n_sentences": 71,
+    "n_statements": 51
+   },
+   "net exports": {
+    "n_sentences": 12,
+    "n_statements": 12
+   },
+   "Ukraine / war": {
+    "n_sentences": 12,
+    "n_statements": 8
+   },
+   "pandemic": {
+    "n_sentences": 51,
+    "n_statements": 24
+   }
+  },
+  "external_after_roberta_cutoff": {
+   "n_sentences": 19,
+   "n_statements": 12,
+   "rows": [
+    {
+     "date": "2022-11-02",
+     "score": 0.999,
+     "sentence": "Inflation remains elevated, reflecting supply and demand imbalances related to the pandemic, higher food and energy prices, and broader price pressures."
+    },
+    {
+     "date": "2022-11-02",
+     "score": -0.746,
+     "sentence": "Russia's war against Ukraine is causing tremendous human and economic hardship."
+    },
+    {
+     "date": "2022-11-02",
+     "score": 0.999,
+     "sentence": "The war and related events are creating additional upward pressure on inflation and are weighing on global economic activity."
+    },
+    {
+     "date": "2022-12-14",
+     "score": 0.999,
+     "sentence": "Inflation remains elevated, reflecting supply and demand imbalances related to the pandemic, higher food and energy prices, and broader price pressures."
+    },
+    {
+     "date": "2022-12-14",
+     "score": -0.746,
+     "sentence": "Russia's war against Ukraine is causing tremendous human and economic hardship."
+    },
+    {
+     "date": "2022-12-14",
+     "score": 0.999,
+     "sentence": "The war and related events are contributing to upward pressure on inflation and are weighing on global economic activity."
+    },
+    {
+     "date": "2023-02-01",
+     "score": -0.963,
+     "sentence": "Russia's war against Ukraine is causing tremendous human and economic hardship and is contributing to elevated global uncertainty."
+    },
+    {
+     "date": "2023-03-22",
+     "score": -0.0,
+     "sentence": "The extent of these effects is uncertain."
+    },
+    {
+     "date": "2025-03-19",
+     "score": -0.328,
+     "sentence": "Uncertainty around the economic outlook has increased."
+    },
+    {
+     "date": "2025-05-07",
+     "score": 0.997,
+     "sentence": "Although swings in net exports have affected the data, recent indicators suggest that economic activity has continued to expand at a solid pace."
+    },
+    {
+     "date": "2025-06-18",
+     "score": 0.997,
+     "sentence": "Although swings in net exports have affected the data, recent indicators suggest that economic activity has continued to expand at a solid pace."
+    },
+    {
+     "date": "2025-07-30",
+     "score": -0.166,
+     "sentence": "Although swings in net exports continue to affect the data, recent indicators suggest that growth of economic activity moderated in the first half of the year."
+    },
+    {
+     "date": "2026-03-18",
+     "score": -0.0,
+     "sentence": "The implications of developments in the Middle East for the U.S. economy are uncertain."
+    },
+    {
+     "date": "2026-04-29",
+     "score": 0.999,
+     "sentence": "Inflation is elevated, in part reflecting the recent increase in global energy prices."
+    },
+    {
+     "date": "2026-04-29",
+     "score": -0.002,
+     "sentence": "Developments in the Middle East are contributing to a high level of uncertainty about the economic outlook."
+    },
+    {
+     "date": "2026-06-17",
+     "score": 0.962,
+     "sentence": "Economic activity is expanding at a solid pace despite elevated uncertainty that owes, in part, to the conflict in the Middle East."
+    },
+    {
+     "date": "2026-06-17",
+     "score": 0.999,
+     "sentence": "Inflation remains elevated relative to the Committee's 2 percent goal, in part reflecting supply shocks that have driven price increases in certain sectors, including energy."
+    },
+    {
+     "date": "2026-07-29",
+     "score": 0.962,
+     "sentence": "Economic activity is expanding at a solid pace despite elevated uncertainty that owes, in part, to the conflict in the Middle East."
+    },
+    {
+     "date": "2026-07-29",
+     "score": 0.999,
+     "sentence": "Inflation remains elevated relative to the Committee's 2 percent goal, in part reflecting supply shocks that have driven price increases in certain sectors, including energy."
+    }
+   ]
+  },
+  "roberta": {
+   "model": "tim9510019/FOMC-RoBERTa",
+   "commit": "d6acba5e8c62eb35f79527a099af789cd778387d",
+   "training_text_to": "2022-10 (Shah, Paturi, Chava 2023)",
+   "checkpoint": "2023-09-26",
+   "n_policy_statements_after_cutoff": 31
+  }
+ }
+}

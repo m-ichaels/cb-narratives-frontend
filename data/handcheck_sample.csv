@@ -1,0 +1,41 @@
+id,date,idx,sentence,hand_label
+1,2015-09-17,11,The Committee continues to monitor inflation developments closely.,inflation
+2,2015-12-16,18,"The Committee is maintaining its existing policy of reinvesting principal payments from its holdings of agency debt and agency mortgage-backed securities in agency mortgage-backed securities and of rolling over maturing Treasury securities at auction, and it anticipates doing so until normalization of the level of the federal funds rate is well under way.",balance_sheet
+3,2016-03-16,5,"Consistent with its statutory mandate, the Committee seeks to foster maximum employment and price stability.",mandate
+4,2016-09-21,4,"Market-based measures of inflation compensation remain low; most survey-based measures of longer-term inflation expectations are little changed, on balance, in recent months.",inflation
+5,2017-03-15,5,"Consistent with its statutory mandate, the Committee seeks to foster maximum employment and price stability.",mandate
+6,2017-06-14,3,"On a 12-month basis, inflation has declined recently and, like the measure excluding food and energy prices, is running somewhat below 2 percent.",inflation
+7,2017-11-01,10,"Near-term risks to the economic outlook appear roughly balanced, but the Committee is monitoring inflation developments closely.",mandate
+8,2017-11-01,13,"In determining the timing and size of future adjustments to the target range for the federal funds rate, the Committee will assess realized and expected economic conditions relative to its objectives of maximum employment and 2 percent inflation.",policy_path
+9,2017-12-13,15,"The Committee expects that economic conditions will evolve in a manner that will warrant gradual increases in the federal funds rate; the federal funds rate is likely to remain, for some time, below levels that are expected to prevail in the longer run.",policy_path
+10,2017-12-13,22,"Implementation Note issued December 13, 2017",other
+11,2018-01-31,12,The Committee will carefully monitor actual and expected inflation developments relative to its symmetric inflation goal.,inflation
+12,2018-06-13,15,Bostic; Lael Brainard; Loretta J.,voting
+13,2018-06-13,16,"Implementation Note issued June 13, 2018",other
+14,2018-09-26,1,"Job gains have been strong, on average, in recent months, and the unemployment rate has stayed low.",labour
+15,2019-01-30,1,"Job gains have been strong, on average, in recent months, and the unemployment rate has remained low.",labour
+16,2019-09-18,13,Bowman; Lael Brainard; Richard H.,voting
+17,2020-06-10,18,Kaplan; Neel Kashkari; Loretta J.,voting
+18,2020-09-16,12,"In assessing the appropriate stance of monetary policy, the Committee will continue to monitor the implications of incoming information for the economic outlook.",mandate
+19,2020-09-16,13,The Committee would be prepared to adjust the stance of monetary policy as appropriate if risks emerge that could impede the attainment of the Committee's goals.,mandate
+20,2020-12-16,18,Bowman; Lael Brainard; Richard H.,voting
+21,2021-06-16,19,Bowman; Lael Brainard; Richard H.,voting
+22,2021-09-22,14,"These asset purchases help foster smooth market functioning and accommodative financial conditions, thereby supporting the flow of credit to households and businesses.",balance_sheet
+23,2021-12-15,4,Supply and demand imbalances related to the pandemic and the reopening of the economy have continued to contribute to elevated levels of inflation.,external
+24,2021-12-15,13,"Beginning in January, the Committee will increase its holdings of Treasury securities by at least $40 billion per month and of agency mortgageâbacked securities by at least $20 billion per month.",balance_sheet
+25,2021-12-15,14,"The Committee judges that similar reductions in the pace of net asset purchases will likely be appropriate each month, but it is prepared to adjust the pace of purchases if warranted by changes in the economic outlook.",balance_sheet
+26,2022-01-26,3,Supply and demand imbalances related to the pandemic and the reopening of the economy have continued to contribute to elevated levels of inflation.,external
+27,2022-06-15,14,Voting for the monetary policy action were Jerome H.,voting
+28,2022-09-21,0,Recent indicators point to modest growth in spending and production.,activity
+29,2022-09-21,9,The Committee is strongly committed to returning inflation to its 2 percent objective.,mandate
+30,2022-11-02,14,"The Committee's assessments will take into account a wide range of information, including readings on public health, labor market conditions, inflation pressures and inflation expectations, and financial and international developments.",mandate
+31,2024-01-31,13,"The Committee's assessments will take into account a wide range of information, including readings on labor market conditions, inflation pressures and inflation expectations, and financial and international developments.",mandate
+32,2024-07-31,12,"In assessing the appropriate stance of monetary policy, the Committee will continue to monitor the implications of incoming information for the economic outlook.",mandate
+33,2024-09-18,10,"In assessing the appropriate stance of monetary policy, the Committee will continue to monitor the implications of incoming information for the economic outlook.",mandate
+34,2025-01-29,2,Inflation remains somewhat elevated.,inflation
+35,2025-05-07,1,"The unemployment rate has stabilized at a low level in recent months, and labor market conditions remain solid.",labour
+36,2025-12-10,12,"The Committee's assessments will take into account a wide range of information, including readings on labor market conditions, inflation pressures and inflation expectations, and financial and international developments.",mandate
+37,2026-01-28,16,"Waller, who preferred to lower the target range for the federal funds rate by 1/4 percentage point at this meeting.",voting
+38,2026-01-28,18,"Implementation Note issued January 28, 2026",other
+39,2026-03-18,12,"The Committee's assessments will take into account a wide range of information, including readings on labor market conditions, inflation pressures and inflation expectations, and financial and international developments.",mandate
+40,2026-07-29,11,"Implementation Note issued July 29, 2026",other

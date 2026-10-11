@@ -1,0 +1,4 @@
+.venv/
+__pycache__/
+*.pyc
+# model weights live in the Hugging Face cache (HF_HOME), never in the repo

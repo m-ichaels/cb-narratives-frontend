@@ -1,0 +1,127 @@
+{
+ "n": 40,
+ "agree_final": 0.95,
+ "agree_embedding_only": 0.8,
+ "n_override": 26,
+ "agree_on_overridden": 1.0,
+ "agree_on_embedding_assigned": 0.8571428571428571,
+ "disagreements": [
+  {
+   "id": 1,
+   "date": "2015-09-17",
+   "hand": "inflation",
+   "final": "mandate",
+   "embedding": "mandate",
+   "sentence": "The Committee continues to monitor inflation developments closely."
+  },
+  {
+   "id": 11,
+   "date": "2018-01-31",
+   "hand": "inflation",
+   "final": "mandate",
+   "embedding": "mandate",
+   "sentence": "The Committee will carefully monitor actual and expected inflation developments relative to its symmetric inflation goal."
+  }
+ ],
+ "confusion": {
+  "activity": {
+   "activity": 1,
+   "balance_sheet": 0,
+   "external": 0,
+   "inflation": 0,
+   "labour": 0,
+   "mandate": 0,
+   "other": 0,
+   "policy_path": 0,
+   "voting": 0
+  },
+  "balance_sheet": {
+   "activity": 0,
+   "balance_sheet": 4,
+   "external": 0,
+   "inflation": 0,
+   "labour": 0,
+   "mandate": 0,
+   "other": 0,
+   "policy_path": 0,
+   "voting": 0
+  },
+  "external": {
+   "activity": 0,
+   "balance_sheet": 0,
+   "external": 2,
+   "inflation": 0,
+   "labour": 0,
+   "mandate": 0,
+   "other": 0,
+   "policy_path": 0,
+   "voting": 0
+  },
+  "inflation": {
+   "activity": 0,
+   "balance_sheet": 0,
+   "external": 0,
+   "inflation": 3,
+   "labour": 0,
+   "mandate": 2,
+   "other": 0,
+   "policy_path": 0,
+   "voting": 0
+  },
+  "labour": {
+   "activity": 0,
+   "balance_sheet": 0,
+   "external": 0,
+   "inflation": 0,
+   "labour": 3,
+   "mandate": 0,
+   "other": 0,
+   "policy_path": 0,
+   "voting": 0
+  },
+  "mandate": {
+   "activity": 0,
+   "balance_sheet": 0,
+   "external": 0,
+   "inflation": 0,
+   "labour": 0,
+   "mandate": 12,
+   "other": 0,
+   "policy_path": 0,
+   "voting": 0
+  },
+  "other": {
+   "activity": 0,
+   "balance_sheet": 0,
+   "external": 0,
+   "inflation": 0,
+   "labour": 0,
+   "mandate": 0,
+   "other": 4,
+   "policy_path": 0,
+   "voting": 0
+  },
+  "policy_path": {
+   "activity": 0,
+   "balance_sheet": 0,
+   "external": 0,
+   "inflation": 0,
+   "labour": 0,
+   "mandate": 0,
+   "other": 0,
+   "policy_path": 2,
+   "voting": 0
+  },
+  "voting": {
+   "activity": 0,
+   "balance_sheet": 0,
+   "external": 0,
+   "inflation": 0,
+   "labour": 0,
+   "mandate": 0,
+   "other": 0,
+   "policy_path": 0,
+   "voting": 7
+  }
+ }
+}
